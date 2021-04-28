@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <title>Laboration 2</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+</head>
+
+<body>
+    <header class="header-container">
+        <nav class="navbar"><h1>Activities March</h1>
+            <button id="toggleButton" onclick="toggle()">Change theme</button>
+        </nav>
+    </header>
+
+    <section class="grid-container">
+        <div class="main2">
+            <article>
+                <div id="taskList">
+                    <form id="inputFields" v-on:submit.prevent="addTask">
+                        <label for="newTask">Add new task</label>
+                        <input type="text"
+                               v-model="newTaskText"
+                               id="newTask"
+                               placeholder="E.g. play videogames"
+                               required>
+
+                        <label for="newDate">Choose date</label>
+                        <input type="date"
+                               v-model="newTaskDate"
+                               id="newDate"
+                               placeholder="YYYY-MM-DD"
+                               required>
+                        <button id="add">Add task</button>
+                    </form>
+
+                    <button id="prio" v-if="items.length > 0" v-on:click="prio">Show priorities</button>
+                    <button id="sort" v-on:click="sortedArray">Sort by date</button>
+                    <ul>
+                        <li v-if="hide === true"
+                            is="item"
+                            v-for="(item, index) in items"
+                            v-bind:style="{color: item.prioColor}"
+                            v-bind:key="item.id"
+                            v-bind:text="item.date+ ' - ' + item.text"
+                            v-bind:date="item.id + item.date"
+                            v-on:remove="items.splice(index, 1)"
+                            v-on:prio="item.prio = true; item.prioColor = '#F00'"
+                            v-on:notprio="item.prio = false; item.prioColor = '#000'">
+                        </li>
+                        <li v-if="hide === false && item.prio === true"
+                            is="item"
+                            v-for="(item, index) in items"
+                            v-bind:style="{color: item.prioColor}"
+                            v-bind:key="item.id"
+                            v-bind:text="item.date+ ' - ' + item.text"
+                            v-bind:date="item.id + item.date"
+                            v-on:remove="items.splice(index, 1)"
+                            v-on:prio="item.prio = true; item.prioColor = '#F00'"
+                            v-on:notprio="item.prio = false; item.prioColor = '#000'">
+                        </li>
+                    </ul>
+                </div>
+            </article>
+            <article>
+                <img src="img/month.jpg" alt="month" id="img">
+            </article>
+        </div>
+    </section>
+    <script>
+        function toggle() {
+            var element = document.body;
+            element.classList.toggle("toggle-mode");
+        }
+    </script>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="js/script.js"></script>
+</body>
+</html>

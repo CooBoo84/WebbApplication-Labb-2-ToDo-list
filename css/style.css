@@ -1,0 +1,242 @@
+@import url('https://fonts.googleapis.com/css?family=Merriweather|Open+Sans&display=swap'); /*font download from google */
+
+/* ------------ Mobile first ------------ */
+body{
+    margin: 0px;
+    background-color: #FFF;
+    color: #444;
+    font-family: 'Open Sans', sans-serif;
+    box-sizing: border-box;
+}
+.toggle-mode {
+    background-color: #f6e281;
+}
+.toggle-mode h1 {
+    color: white;
+}
+#toggleButton{
+    font-family: 'Open Sans', sans-serif;
+    font-size: 12px;
+    color: #000;
+    background-color: #f6e281;
+    border-radius: 20px;
+}
+#toggleButton:hover{
+    color: white;
+    background-color: #84cf6a;
+    border-radius: 20px;
+}
+header{
+    grid-area: header;
+    display: grid;
+    grid-template-columns: 100%;
+    flex-direction: row;
+    align-items: center;
+}
+.navbar {
+    background: linear-gradient(-90deg, #84cf6a, #16c0b0);
+    height: 60px;
+    margin-bottom: 15px;
+    padding: 0.75em 0 1em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+h1{
+    font-size: 35px;
+}
+ul{
+    padding-left: 20px;
+}
+section{
+    display: grid;
+    grid-template-rows: auto auto auto;
+    grid-template-areas:
+            "header"
+            "navigation"
+            "main-content";
+    text-align: left;
+}
+div.main2{
+    grid-area: main-content;
+    grid-gap: 15px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    text-align: left;
+}
+label{
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+}
+.gridButton{
+    font-family: 'Open Sans', sans-serif;
+    font-size: 12px;
+    color: #000;
+    background-color: #16c0b0;
+    border-radius: 20px;
+}
+.gridButton:hover{
+    color: white;
+    background-color: #84cf6a;
+    border-radius: 20px;
+}
+#newTask{
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    width: 90%;
+}
+#newDate{
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    width: 90.8%;
+}
+#addTask{
+    display: grid;
+    flex-direction: row;
+    font-size: 16px;
+    text-align: left;
+}
+#add{
+    font-size: 16px;
+    background-color: #16c0b0;
+    border-radius: 20px;
+    width: 150px;
+}
+#add:hover{
+    color: white;
+    background-color: #84cf6a;
+    border-radius: 20px;
+}
+#prio{
+    font-size: 16px;
+    background-color: #16c0b0;
+    border-radius: 20px;
+    width: 150px;
+    margin-left: 15px;
+}
+#prio:hover{
+    color: white;
+    background-color: #84cf6a;
+    border-radius: 20px;
+}
+#sort{
+    font-size: 16px;
+    background-color: #16c0b0;
+    border-radius: 20px;
+    width: 150px;
+    margin-left: 15px;
+}
+#sort:hover{
+    color: white;
+    background-color: #84cf6a;
+    border-radius: 20px;
+}
+#inputFields{
+    font-size: 15px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 10px;
+    width: 100%;
+    margin-left: 15px;
+    margin-bottom: 15px;
+    position: relative;
+}
+#tasks{
+    font-size: 15px;
+    display: grid;
+    grid-template-columns: 1fr 15% 15% 15%;
+    grid-gap: 10px;
+    width: auto;
+    margin-bottom: 10px;
+    margin-right: 10px;
+    padding-left: 0px;
+}
+#img{
+    width: 400px;
+    height: auto;
+    margin-left: 10px;
+}
+
+/*Tablet*/
+@media screen and (min-width: 768px) and (max-width: 1024px){
+    body{
+        margin: 0px;
+        width: 100%;
+    }
+    header.header-container {
+        width: 100%;
+        margin: 0 auto;
+    }
+    section.grid-container{
+        width: 1200px;
+        margin: 0 auto;
+        text-decoration: none;
+    }
+    div.main2{
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+    }
+    label{
+        font-size: 20px;
+        font-weight: bold;
+        text-align: left;
+    }
+    #newTask{
+             font-family: 'Open Sans', sans-serif;
+             font-size: 16px;
+             width: 40%;
+         }
+    #newDate{
+        font-family: 'Open Sans', sans-serif;
+        font-size: 16px;
+        width: 40.8%;
+    }
+    #tasks{
+        font-size: 15px;
+        display: grid;
+        grid-template-columns: 30% 15% 15% 15%;
+        grid-gap: 10px;
+        width: auto;
+        margin-bottom: 10px;
+        margin-right: 10px;
+        padding-left: 0px;
+    }
+}
+
+/*Desktop*/
+@media screen and (min-width: 1025px) {
+    body{
+        margin: 0px;
+        width: 100%;
+    }
+    header.header-container {
+        width: 100%;
+        margin: 0 auto;
+    }
+    section.grid-container{
+        width: 1000px;
+        margin: 0 auto;
+        text-decoration: none;
+    }
+    div.main2{
+        grid-template-columns: 60% 1fr;
+        grid-template-rows: auto auto;
+    }
+    label{
+        font-size: 20px;
+        font-weight: bold;
+        text-align: left;
+    }
+    #newTask{
+        font-family: 'Open Sans', sans-serif;
+        font-size: 16px;
+        width: 40%;
+    }
+    #newDate{
+        font-family: 'Open Sans', sans-serif;
+        font-size: 16px;
+        width: 40.8%;
+    }
+}
